@@ -38,96 +38,103 @@ export default function SignUp() {
   };
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-slate-50 dark:bg-black p-4 transition-colors duration-500 overflow-hidden relative">
+    <div className="flex min-h-screen items-center justify-center bg-[#0f172a] relative overflow-hidden p-6">
       
-      {/* Background Decorative Orbs */}
+      {/* Background Decorative Orbs - Animasi halus untuk kedalaman */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-        <div className="absolute top-[-10%] right-[-5%] w-[40%] h-[40%] rounded-full bg-blue-600/20 dark:bg-blue-600/30 blur-[120px]" />
-        <div className="absolute bottom-[-10%] left-[-5%] w-[40%] h-[40%] rounded-full bg-cyan-500/20 dark:bg-cyan-500/30 blur-[120px]" />
+        <div className="absolute top-[-10%] right-[-10%] w-[500px] h-[500px] rounded-full bg-cyan-500/10 blur-[120px] animate-pulse" />
+        <div className="absolute bottom-[-10%] left-[-10%] w-[500px] h-[500px] rounded-full bg-blue-600/10 blur-[120px] animate-pulse delay-700" />
       </div>
 
-      <main className="relative w-full max-w-[460px] z-10">
-        <div className="rounded-[40px] bg-white dark:bg-[#0f0f0f] p-10 shadow-2xl dark:shadow-[0_20px_50px_rgba(0,0,0,0.7)] border border-slate-200 dark:border-white/5 transition-all">
+      <main className="relative w-full max-w-[480px] z-10">
+        {/* Card Glassmorphism */}
+        <div className="rounded-[32px] bg-white/[0.03] backdrop-blur-xl p-8 md:p-10 shadow-[0_32px_64px_-16px_rgba(0,0,0,0.5)] border border-white/[0.08] relative overflow-hidden">
           
+          {/* Accent Top Line */}
+          <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[#00bcd4]/50 to-transparent" />
+
           {/* Brand Header */}
           <div className="flex flex-col items-center mb-8">
-            <div className="h-14 w-14 rounded-2xl bg-gradient-to-br from-[#005a8d] to-[#00b4d8] flex items-center justify-center text-white text-2xl mb-4 shadow-xl shadow-blue-500/20 font-black">
+            <div className="h-14 w-14 rounded-2xl bg-gradient-to-tr pr-1  from-[#00bcd4] to-white/20 flex items-center justify-center text-white text-2xl mb-5 shadow-[0_0_30px_rgba(0,188,212,0.3)] border border-white/20 font-black italic">
               S
             </div>
-            <h1 className="text-3xl font-black tracking-tighter text-slate-900 dark:text-white">Create Account</h1>
-            <p className="text-slate-500 dark:text-slate-400 mt-2 font-medium text-center">
-              Start managing your payroll system more efficiently.
+            <h1 className="text-3xl font-black tracking-tighter text-white">
+                <span className="italic text-[#00bcd4]">Salary.</span>App
+            </h1>
+            <p className="text-slate-400 mt-2 font-medium text-sm text-center tracking-wide">
+              Create an account to start managing payroll.
             </p>
           </div>
 
-          <form onSubmit={handleRegister} className="space-y-5">
+          <form onSubmit={handleRegister} className="space-y-4">
             {/* FULL NAME */}
             <div className="space-y-1.5">
-              <label className="text-sm font-bold text-slate-600 dark:text-slate-400 ml-1">Full Name</label>
+              <label className="text-[11px] font-black uppercase tracking-[2px] text-slate-400 ml-1">Full Name</label>
               <input
                 type="text"
                 placeholder="John Doe"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                className="w-full bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-2xl px-5 py-4 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-cyan-500/20 focus:border-cyan-500 transition-all font-medium"
+                className="w-full bg-white/[0.03] border border-white/10 rounded-2xl px-5 py-3.5 text-white placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-cyan-500/20 focus:border-cyan-500/50 transition-all font-medium"
                 required
               />
             </div>
 
             {/* EMAIL */}
             <div className="space-y-1.5">
-              <label className="text-sm font-bold text-slate-600 dark:text-slate-400 ml-1">Email Address</label>
+              <label className="text-[11px] font-black uppercase tracking-[2px] text-slate-400 ml-1">Email Address</label>
               <input
                 type="email"
                 placeholder="name@company.com"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                className="w-full bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-2xl px-5 py-4 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-cyan-500/20 focus:border-cyan-500 transition-all font-medium"
+                className="w-full bg-white/[0.03] border border-white/10 rounded-2xl px-5 py-3.5 text-white placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-cyan-500/20 focus:border-cyan-500/50 transition-all font-medium"
                 required
               />
             </div>
 
             {/* PASSWORD */}
             <div className="space-y-1.5">
-              <label className="text-sm font-bold text-slate-600 dark:text-slate-400 ml-1">Password</label>
+              <label className="text-[11px] font-black uppercase tracking-[2px] text-slate-400 ml-1">Password</label>
               <input
                 type="password"
                 placeholder="••••••••"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                className="w-full bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 rounded-2xl px-5 py-4 text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-cyan-500/20 focus:border-cyan-500 transition-all font-medium"
+                className="w-full bg-white/[0.03] border border-white/10 rounded-2xl px-5 py-3.5 text-white placeholder:text-slate-600 focus:outline-none focus:ring-2 focus:ring-cyan-500/20 focus:border-cyan-500/50 transition-all font-medium"
                 required
               />
             </div>
 
             {error && (
-              <div className="bg-rose-500/10 border border-rose-500/20 text-rose-500 text-xs py-3 px-4 rounded-xl font-bold flex items-center gap-2">
-                <span className="text-sm">⚠️</span> {error}
+              <div className="bg-red-500/10 border border-red-500/20 text-red-400 text-[12px] py-3 px-4 rounded-xl font-bold flex items-center gap-2 animate-pulse">
+                <span>⚠️</span> {error}
               </div>
             )}
 
+            {/* Submit Button */}
             <button
               type="submit"
               disabled={loading}
-              className="w-full relative overflow-hidden rounded-2xl bg-[#005a8d] py-4 text-white font-black transition-all hover:bg-[#0077b6] hover:shadow-2xl hover:shadow-blue-500/30 disabled:opacity-50 active:scale-[0.98] mt-2 group"
+              className="group relative w-full overflow-hidden rounded-2xl bg-[#00bcd4] py-4 text-slate-950 font-black text-sm uppercase tracking-widest transition-all hover:bg-cyan-300 hover:shadow-[0_0_30px_rgba(0,188,212,0.4)] disabled:opacity-50 active:scale-[0.98] mt-4"
             >
               <span className="relative z-10 flex items-center justify-center gap-2">
                 {loading ? (
-                  <div className="h-5 w-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                  <div className="h-5 w-5 border-[3px] border-slate-900/30 border-t-slate-950 rounded-full animate-spin" />
                 ) : (
                   "Create Account"
                 )}
               </span>
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700" />
             </button>
 
-            <div className="text-center mt-6 pt-6 border-t border-slate-100 dark:border-white/5">
-              <p className="text-sm text-slate-500 dark:text-slate-400 font-medium">
-                Already have an account?{" "}
+            {/* Footer Navigation */}
+            <div className="text-center mt-8 pt-6 border-t border-white/5">
+              <p className="text-xs text-slate-500 font-bold uppercase tracking-widest">
+                Already part of the team?{" "}
                 <button 
                   type="button"
                   onClick={() => router.push("/sign-in")}
-                  className="text-cyan-600 dark:text-cyan-400 font-bold hover:underline ml-1"
+                  className="text-[#00bcd4] hover:text-cyan-300 transition-colors ml-1"
                 >
                   Sign In
                 </button>
@@ -135,7 +142,12 @@ export default function SignUp() {
             </div>
           </form>
         </div>
+
+        {/* System Credit */}
+        <p className="text-center text-slate-600 text-[10px] mt-8 font-bold tracking-[4px] uppercase">
+          Salary App v2.0 &bull; Secure Terminal
+        </p>
       </main>
     </div>
   );
-}
+} 
