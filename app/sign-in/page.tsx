@@ -53,7 +53,7 @@ export default function SignIn() {
 
           {/* Logo Section */}
           <div className="flex flex-col items-center mb-10">
-            <div className="h-16 w-20 rounded-2xl bg-gradient-to-tr from-[#00bcd4] to-white/20 flex items-center justify-center pr-1 text-white text-3xl mb-6 shadow-[0_0_30px_rgba(0,188,212,0.3)] border border-white/20 font-black italic">
+            <div className="h-14 w-15 rounded-2xl bg-gradient-to-tr from-[#00bcd4] to-white/20 flex items-center justify-center pr-1 text-white text-3xl mb-6 shadow-[0_0_30px_rgba(0,188,212,0.3)] border border-white/20 font-black italic">
               S
             </div>
             <h1 className="text-4xl font-black tracking-tighter text-white italic">
