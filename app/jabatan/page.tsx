@@ -245,6 +245,7 @@ export default function JabatanPage() {
                         <th className="px-8 py-6">No</th>
                         <th className="px-8 py-6">Jabatan</th>
                         <th className="px-8 py-6">Gaji Pokok</th>
+                        <th className="px-8 py-6">Divisi</th>
                         <th className="px-8 py-6 text-right">Aksi</th>
                       </tr>
                     </thead>
@@ -259,11 +260,12 @@ export default function JabatanPage() {
                             <td className="px-8 py-6 text-sm font-black text-emerald-600">
                               Rp {Number(item.gaji_pokok).toLocaleString("id-ID")}
                             </td>
-                            <td className="px-8 py-6 text-right">
-                              <div className="flex justify-end gap-2 opacity-0 group-hover:opacity-100 transition-all">
+                            <td className="px-8 py-6 text-sm font-medium text-slate-500">{item.divisi?.nama || (item as any).divisi}</td>
+                            <td className="pl-8 py-6 text-right">
+                              <div className="flex justify-center gap-2 opacity-0 group-hover:opacity-100 transition-all">
                                 <button 
                                   onClick={() => handleEdit(item)}
-                                  className="p-2 bg-amber-50 text-amber-600 rounded-xl hover:bg-amber-500 hover:text-white transition-all shadow-sm"
+                                  className=" p-2 bg-amber-50 text-amber-600 rounded-xl hover:bg-amber-500 hover:text-white transition-all shadow-sm"
                                   title="Edit"
                                 >
                                   ✏️
